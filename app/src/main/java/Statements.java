@@ -17,7 +17,7 @@ public static void main(String[] args) throws SQLException {
             preparedStatement.executeUpdate();
 
             preparedStatement.setString(1, "Emily");
-            preparedStatement.setString(2, "74848303");
+            preparedStatement.setString(2, "7484830");
             preparedStatement.executeUpdate();
         }
         var sql3 = "SELECT * FROM users";
