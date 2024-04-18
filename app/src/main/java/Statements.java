@@ -13,7 +13,7 @@ public class Statements {
             var sql2 = "INSERT INTO users (username, phone) VALUES (?, ?)";
             try (var preparedStatement = conn.prepareStatement(sql2)) {
                 preparedStatement.setString(1, "Tommy");
-                preparedStatement.setString(2, "123456789");
+                preparedStatement.setString(2, "1256789");
                 preparedStatement.executeUpdate();
 
                 preparedStatement.setString(1, "Emily");
