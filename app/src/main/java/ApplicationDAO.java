@@ -15,7 +15,7 @@ public class ApplicationDAO {
             try (var statement = conn.createStatement()) {
                 statement.execute(sql);
             }
-            var dao =new UserDao(conn);
+            var dao = new UserDao(conn);
             var user = new User("Maria", "123456789");
             dao.save(user);
 

@@ -1,7 +1,7 @@
 public class User {
     private String name;
     private String phone;
-    private String id;
+    private Long id;
 
     User(String name, String phone) {
         this.name = name;
@@ -15,11 +15,11 @@ public class User {
         return phone;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

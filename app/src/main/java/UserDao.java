@@ -4,10 +4,12 @@ import java.sql.Statement;
 
 public class UserDao {
     private Connection connection;
+
     public UserDao(Connection conn) {
 
         connection = conn;
     }
+
     public void save(User user) throws SQLException {
         if (user.getId() == null) {
             var sql = "INSERT INTO users (username, phone) VALUES (?, ?)";
@@ -17,12 +19,11 @@ public class UserDao {
                 preparedStatement.executeUpdate();
                 var generatedKeys = preparedStatement.getGeneratedKeys();
                 if (generatedKeys.next()) {
-                    user.setId(generatedKeys.getString(1));
+                    user.setId(generatedKeys.getLong(1));
                 } else {
                     throw new SQLException("DB have not returned an id after saving an entity");
                 }
             }
         }
-
     }
 }
